@@ -1,4 +1,6 @@
 ---
+import { waUrl } from '../lib/whatsapp';
+
 const products = [
   {
     name: 'meun8n',
@@ -25,6 +27,33 @@ const products = [
     badge: 'SaaS · Finanças',
     icon: `<line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
     featured: true,
+  },
+  {
+    name: 'Domus',
+    tagline: 'Do primeiro oi à chave na mão',
+    desc: 'CRM imobiliário no WhatsApp oficial. Lead de qualquer canal cai no corretor de plantão em segundos, funil de venda e lançamentos, agenda de visitas e retorno automático — integrado ao Loft.',
+    href: waUrl('domus'),
+    ctaLabel: 'Solicitar apresentação',
+    color: 'text-rose-400',
+    borderAccent: 'border-rose-500/25',
+    bgAccent: 'bg-rose-500/5',
+    iconBg: 'bg-rose-500/10 border-rose-500/20',
+    badge: 'CRM · Imobiliárias',
+    icon: `<path d="M3 11.5 12 4l9 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-6h4v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    featured: false,
+  },
+  {
+    name: 'Carceris',
+    tagline: 'Infraestrutura digital do sistema prisional',
+    desc: 'Plataforma de gestão penitenciária: alocação de vagas, execução penal, saúde, educação, trabalho e transferências em uma única fonte de dados, com auditoria completa e integração com judiciário e segurança pública.',
+    href: 'https://carceris.com.br',
+    color: 'text-cyan-400',
+    borderAccent: 'border-cyan-500/25',
+    bgAccent: 'bg-cyan-500/5',
+    iconBg: 'bg-cyan-500/10 border-cyan-500/20',
+    badge: 'GovTech · Segurança',
+    icon: `<path d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6l-8-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    featured: false,
   },
   {
     name: 'core.theretech',
@@ -118,7 +147,7 @@ const products = [
               class={`inline-flex items-center gap-2 text-sm font-medium transition-all duration-200 cursor-pointer hover:gap-3 ${p.color}`}
               aria-label={`Conhecer ${p.name}`}
             >
-              {p.href.startsWith('http') ? 'Acessar produto' : 'Em breve'}
+              {p.ctaLabel ?? (p.href.startsWith('http') ? 'Acessar produto' : 'Em breve')}
               <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" aria-hidden="true">
                 {p.href.startsWith('http')
                   ? `<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`
