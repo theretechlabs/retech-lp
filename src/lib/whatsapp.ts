@@ -12,6 +12,7 @@ type CtaSource =
   | 'sobre'
   | 'servicos'
   | 'produtos'
+  | 'domus'
   | 'tecnologias'
   | 'cta-final'
   | 'footer';
@@ -27,6 +28,8 @@ const messages: Record<CtaSource, string> = {
     'Olá! Tenho interesse em um dos serviços da The Retech e gostaria de conversar com um especialista.',
   produtos:
     'Olá! Vi os produtos da The Retech no site e gostaria de saber mais.',
+  domus:
+    'Olá! Vi o Domus no site da The Retech e gostaria de agendar uma apresentação para minha imobiliária.',
   tecnologias:
     'Olá! Fiquei interessado na stack técnica da The Retech. Gostaria de conversar sobre um projeto.',
   'cta-final':
